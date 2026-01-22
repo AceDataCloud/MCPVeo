@@ -31,8 +31,8 @@ Get your API token from [AceDataCloud Platform](https://platform.acedata.cloud):
 
 ```bash
 # Clone the repository
-git clone https://github.com/AceDataCloud/mcp-veo.git
-cd mcp-veo
+git clone https://github.com/AceDataCloud/MCPVeo.git
+cd MCPVeo
 
 # Install with pip
 pip install -e .
@@ -48,7 +48,7 @@ uv pip install -e .
 cp .env.example .env
 
 # Edit with your API token
-echo "ACEDATA_API_TOKEN=your_token_here" > .env
+echo "ACEDATACLOUD_API_TOKEN=your_token_here" > .env
 ```
 
 ### 4. Run
@@ -74,7 +74,7 @@ Add to your Claude Desktop configuration:
     "veo": {
       "command": "mcp-veo",
       "env": {
-        "ACEDATA_API_TOKEN": "your_api_token_here"
+        "ACEDATACLOUD_API_TOKEN": "your_api_token_here"
       }
     }
   }
@@ -88,9 +88,9 @@ Or if using uv:
   "mcpServers": {
     "veo": {
       "command": "uv",
-      "args": ["run", "--directory", "/path/to/mcp-veo", "mcp-veo"],
+      "args": ["run", "--directory", "/path/to/MCPVeo", "mcp-veo"],
       "env": {
-        "ACEDATA_API_TOKEN": "your_api_token_here"
+        "ACEDATACLOUD_API_TOKEN": "your_api_token_here"
       }
     }
   }
@@ -176,8 +176,8 @@ Claude: I'll create a transition video between your images.
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| `ACEDATA_API_TOKEN` | API token from AceDataCloud | **Required** |
-| `ACEDATA_API_BASE_URL` | API base URL | `https://api.acedata.cloud` |
+| `ACEDATACLOUD_API_TOKEN` | API token from AceDataCloud | **Required** |
+| `ACEDATACLOUD_API_BASE_URL` | API base URL | `https://api.acedata.cloud` |
 | `VEO_DEFAULT_MODEL` | Default model for generation | `veo2` |
 | `VEO_REQUEST_TIMEOUT` | Request timeout in seconds | `180` |
 | `LOG_LEVEL` | Logging level | `INFO` |
@@ -199,8 +199,8 @@ Options:
 
 ```bash
 # Clone repository
-git clone https://github.com/AceDataCloud/mcp-veo.git
-cd mcp-veo
+git clone https://github.com/AceDataCloud/MCPVeo.git
+cd MCPVeo
 
 # Create virtual environment
 python -m venv .venv
