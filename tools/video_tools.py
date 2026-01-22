@@ -108,9 +108,7 @@ async def veo_image_to_video(
     ] = False,
     callback_url: Annotated[
         str,
-        Field(
-            description="Optional URL to receive a POST callback when generation completes."
-        ),
+        Field(description="Optional URL to receive a POST callback when generation completes."),
     ] = "",
 ) -> str:
     """Generate AI video from one or more reference images using Veo.
