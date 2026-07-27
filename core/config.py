@@ -22,7 +22,7 @@ class Settings:
     api_token: str = field(default_factory=lambda: os.getenv("ACEDATACLOUD_API_TOKEN", ""))
 
     # Default Model
-    default_model: str = field(default_factory=lambda: os.getenv("VEO_DEFAULT_MODEL", "veo2"))
+    default_model: str = field(default_factory=lambda: os.getenv("VEO_DEFAULT_MODEL", "veo31-fast"))
 
     # Request Configuration
     request_timeout: float = field(

@@ -61,7 +61,7 @@ For screenshots, token setup, project-level and user-level `mcp.json`, and Copil
 
 ## Supported Models
 
-`veo-2`, `veo-2-fast`, `veo-3`, `veo-3-fast`, `veo-3.1`, `veo-3.1-fast`
+`veo-3`, `veo-3-fast`, `veo-3.1`, `veo-3.1-fast`
 
 ## Pricing
 

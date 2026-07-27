@@ -31,13 +31,13 @@ async def veo_text_to_video(
     model: Annotated[
         VeoModel,
         Field(
-            description="Veo model version. 'veo2' for quality mode, 'veo2-fast' for faster generation. 'veo3'/'veo31' offer improved quality. Models with '-fast' suffix are faster but slightly lower quality."
+            description="Veo model version. 'veo31'/'veo31-fast' are the latest; 'veo3'/'veo3-fast' remain available. Models with '-fast' suffix are faster but slightly lower quality."
         ),
     ] = DEFAULT_MODEL,
     aspect_ratio: Annotated[
         AspectRatio,
         Field(
-            description="Video aspect ratio. '16:9' for landscape/widescreen, '9:16' for portrait/vertical, '1:1' for square, '4:3' for standard, '3:4' for portrait standard."
+            description="Video aspect ratio: '16:9' for landscape/widescreen or '9:16' for portrait/vertical."
         ),
     ] = DEFAULT_ASPECT_RATIO,
     translation: Annotated[

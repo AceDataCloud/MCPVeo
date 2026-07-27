@@ -43,7 +43,7 @@ class TestVideoTools:
 
         result = await veo_text_to_video(
             prompt="A simple blue sky with white clouds drifting slowly",
-            model="veo2",
+            model="veo31-fast",
             aspect_ratio="16:9",
         )
 
@@ -66,7 +66,7 @@ class TestInfoTools:
         print("\n=== List Models Result ===")
         print(result)
 
-        assert "veo2" in result
+        assert "veo31-fast" in result
         assert "veo3" in result
 
     @pytest.mark.asyncio
@@ -109,7 +109,7 @@ class TestTaskTools:
         # Generate a video first
         gen_result = await veo_text_to_video(
             prompt="A simple test scene with blue sky",
-            model="veo2",
+            model="veo31-fast",
             aspect_ratio="16:9",
         )
 

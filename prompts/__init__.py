@@ -62,7 +62,7 @@ When the user wants to generate video, choose the appropriate tool based on thei
 - veo31 or veo3 (non-fast versions)
 
 **For speed:**
-- veo2-fast, veo3-fast, veo31-fast
+- veo3-fast, veo31-fast
 
 **For image fusion:**
 - veo31-fast-ingredients (image2video only)

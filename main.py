@@ -60,7 +60,7 @@ Examples:
 
 Environment Variables:
   ACEDATACLOUD_API_TOKEN     API token from AceDataCloud (required)
-  VEO_DEFAULT_MODEL          Default model (default: veo2)
+  VEO_DEFAULT_MODEL          Default model (default: veo31-fast)
   VEO_REQUEST_TIMEOUT        Request timeout in seconds (default: 180)
   LOG_LEVEL                  Logging level (default: INFO)
         """,

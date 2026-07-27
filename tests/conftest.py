@@ -55,7 +55,7 @@ def mock_task_response():
         "created_at": 1705788000.0,
         "request": {
             "action": "text2video",
-            "model": "veo2",
+            "model": "veo31-fast",
             "prompt": "A test video",
         },
         "response": {

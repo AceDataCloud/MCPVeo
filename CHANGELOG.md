@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Removed
+
+- `veo2` and `veo2-fast` models — retired upstream; both now return `400 model is not supported`
+- Aspect ratios `4:3`, `3:4` and `1:1` — the API only accepts `16:9` and `9:16`
+
+### Changed
+
+- Default model is now `veo31-fast` (was `veo2`)
+
 ## [0.1.0] - 2025-06-01
 
 ### Added

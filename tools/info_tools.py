@@ -12,7 +12,6 @@ async def veo_list_models() -> str:
     for your video generation.
 
     Model comparison:
-    - veo2/veo2-fast: Standard models, 1 image (first frame)
     - veo3/veo3-fast: Improved quality, 1-3 images supported
     - veo31/veo31-fast: Latest models, 1-3 images supported
     - veo31-fast-ingredients: Multi-image fusion mode (ingredients2video action)
@@ -25,8 +24,6 @@ async def veo_list_models() -> str:
 
 | Model                  | Text2Video | Image2Video | Image Input Rules           |
 |------------------------|------------|-------------|------------------------------|
-| veo2                   | ✅         | ✅          | 1 image (first frame)        |
-| veo2-fast              | ✅         | ✅          | 1 image (first frame)        |
 | veo3                   | ✅         | ✅          | 1-3 images (first/last)      |
 | veo3-fast              | ✅         | ✅          | 1-3 images (first/last)      |
 | veo31                  | ✅         | ✅          | 1-3 images (first/last)      |
@@ -47,9 +44,6 @@ Recommendations:
 Aspect Ratios:
 - 16:9: Landscape/widescreen (default)
 - 9:16: Portrait/vertical (social media stories)
-- 4:3: Standard
-- 3:4: Portrait standard
-- 1:1: Square
 
 Resolution Options:
 - 4k: Highest quality output

@@ -13,7 +13,7 @@ def test_settings_default_values():
 
         settings = Settings()
         assert settings.api_base_url == "https://api.acedata.cloud"
-        assert settings.default_model == "veo2"
+        assert settings.default_model == "veo31-fast"
         assert settings.request_timeout == 180.0
         assert settings.server_name == "veo"
         assert settings.transport == "stdio"

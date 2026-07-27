@@ -4,8 +4,6 @@ from typing import Literal
 
 # Veo model versions
 VeoModel = Literal[
-    "veo2",
-    "veo2-fast",
     "veo3",
     "veo3-fast",
     "veo31",
@@ -14,10 +12,10 @@ VeoModel = Literal[
 ]
 
 # Aspect ratio options
-AspectRatio = Literal["16:9", "9:16", "3:4", "4:3", "1:1"]
+AspectRatio = Literal["16:9", "9:16"]
 
 # Default model
-DEFAULT_MODEL: VeoModel = "veo2"
+DEFAULT_MODEL: VeoModel = "veo31-fast"
 
 # Video resolution options
 VideoResolution = Literal["4k", "1080p", "gif"]

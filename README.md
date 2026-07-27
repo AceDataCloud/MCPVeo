@@ -364,8 +364,6 @@ Claude: I'll create a transition video between your images.
 
 | Model                    | Text2Video | Image2Video | Image Input           |
 | ------------------------ | ---------- | ----------- | --------------------- |
-| `veo2`                   | ✅         | ✅          | 1 image (first frame) |
-| `veo2-fast`              | ✅         | ✅          | 1 image (first frame) |
 | `veo3`                   | ✅         | ✅          | 1-3 images            |
 | `veo3-fast`              | ✅         | ✅          | 1-3 images            |
 | `veo31`                  | ✅         | ✅          | 1-3 images            |
@@ -376,9 +374,6 @@ Claude: I'll create a transition video between your images.
 
 - `16:9` - Landscape/widescreen (default)
 - `9:16` - Portrait/vertical (social media)
-- `4:3` - Standard
-- `3:4` - Portrait standard
-- `1:1` - Square
 
 ## Configuration
 
@@ -390,7 +385,7 @@ Claude: I'll create a transition video between your images.
 | `ACEDATACLOUD_API_BASE_URL` | API base URL                 | `https://api.acedata.cloud` |
 | `ACEDATACLOUD_OAUTH_CLIENT_ID`  | OAuth client ID (hosted mode) | —                           |
 | `ACEDATACLOUD_PLATFORM_BASE_URL` | Platform base URL            | `https://platform.acedata.cloud` |
-| `VEO_DEFAULT_MODEL`         | Default model for generation | `veo2`                      |
+| `VEO_DEFAULT_MODEL`         | Default model for generation | `veo31-fast`                |
 | `VEO_REQUEST_TIMEOUT`       | Request timeout in seconds   | `180`                       |
 | `LOG_LEVEL`                 | Logging level                | `INFO`                      |
 
