@@ -172,7 +172,10 @@ Environment Variables:
                             },
                             {"name": "veo_get_1080p", "description": "Get 1080p version"},
                             {"name": "veo_get_task", "description": "Query task status"},
-                            {"name": "veo_get_tasks_batch", "description": "Query multiple tasks"},
+                            {
+                                "name": "veo_get_tasks_batch",
+                                "description": "Query multiple tasks or list tasks",
+                            },
                             {"name": "veo_list_models", "description": "List available models"},
                             {"name": "veo_list_actions", "description": "List available actions"},
                             {

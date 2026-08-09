@@ -175,28 +175,6 @@ class VeoClient:
             self._with_async_callback({"action": "get1080p", "video_id": video_id, "model": model}),
         )
 
-    async def upsample_video(self, **kwargs: Any) -> dict[str, Any]:
-        """Upsample a video using the upsample endpoint."""
-        logger.info(f"📺 Upsampling video with action: {kwargs.get('action', '1080p')}")
-        return await self.request("/veo/upsample", self._with_async_callback(kwargs))
-
-    async def extend_video(self, **kwargs: Any) -> dict[str, Any]:
-        """Extend a video using the extend endpoint."""
-        logger.info(f"🎬 Extending video: {kwargs.get('video_id', 'N/A')}")
-        return await self.request("/veo/extend", self._with_async_callback(kwargs))
-
-    async def reshoot_video(self, **kwargs: Any) -> dict[str, Any]:
-        """Reshoot a video with camera motion using the reshoot endpoint."""
-        logger.info(f"🎥 Reshooting video: {kwargs.get('video_id', 'N/A')}")
-        return await self.request("/veo/reshoot", self._with_async_callback(kwargs))
-
-    async def video_objects(self, **kwargs: Any) -> dict[str, Any]:
-        """Insert or remove objects in a video using the objects endpoint."""
-        logger.info(
-            f"🔧 Video objects ({kwargs.get('action', 'insert')}): {kwargs.get('video_id', 'N/A')}"
-        )
-        return await self.request("/veo/objects", self._with_async_callback(kwargs))
-
     async def query_task(self, **kwargs: Any) -> dict[str, Any]:
         """Query task status using the tasks endpoint."""
         task_id = kwargs.get("id") or kwargs.get("ids", [])

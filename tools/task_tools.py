@@ -17,7 +17,11 @@ async def veo_get_task(
         Field(
             description="The task ID returned from a generation request. This is the 'task_id' field from any veo_text_to_video, veo_image_to_video, or veo_get_1080p tool response."
         ),
-    ],
+    ] = "",
+    trace_id: Annotated[
+        str,
+        Field(description="Optional trace identifier of the task to retrieve."),
+    ] = "",
 ) -> str:
     """Query the status and result of a video generation task.
 
@@ -37,10 +41,13 @@ async def veo_get_task(
     Returns:
         Task status and generated video information including URLs and state.
     """
-    result = await client.query_task(
-        id=task_id,
-        action="retrieve",
-    )
+    payload: dict = {"action": "retrieve"}
+    if task_id:
+        payload["id"] = task_id
+    if trace_id:
+        payload["trace_id"] = trace_id
+
+    result = await client.query_task(**payload)
     # Throttle polling: sleep 5s for incomplete tasks so LLM clients
     # don't burn through poll attempts in seconds.
     response = result.get("response", {})
@@ -53,9 +60,33 @@ async def veo_get_task(
 @mcp.tool()
 async def veo_get_tasks_batch(
     task_ids: Annotated[
-        list[str],
-        Field(description="List of task IDs to query. Maximum recommended batch size is 50 tasks."),
-    ],
+        list[str] | None,
+        Field(description="Optional list of task IDs to query. Maximum recommended batch size is 50 tasks."),
+    ] = None,
+    trace_ids: Annotated[
+        list[str] | None,
+        Field(description="Optional list of trace identifiers to query."),
+    ] = None,
+    offset: Annotated[
+        int,
+        Field(description="Number of matching tasks to skip for list retrieval."),
+    ] = 0,
+    limit: Annotated[
+        int,
+        Field(description="Maximum number of tasks to return."),
+    ] = 12,
+    type: Annotated[
+        str,
+        Field(description="Optional task type filter."),
+    ] = "",
+    created_at_min: Annotated[
+        float | None,
+        Field(description="Return tasks created after this Unix timestamp."),
+    ] = None,
+    created_at_max: Annotated[
+        float | None,
+        Field(description="Return tasks created before this Unix timestamp."),
+    ] = None,
 ) -> str:
     """Query multiple video generation tasks at once.
 
@@ -70,10 +101,23 @@ async def veo_get_tasks_batch(
     Returns:
         Status and video information for all queried tasks.
     """
-    result = await client.query_task(
-        ids=task_ids,
-        action="retrieve_batch",
-    )
+    payload: dict = {
+        "action": "retrieve_batch",
+        "offset": offset,
+        "limit": limit,
+    }
+    if task_ids:
+        payload["ids"] = task_ids
+    if trace_ids:
+        payload["trace_ids"] = trace_ids
+    if type:
+        payload["type"] = type
+    if created_at_min is not None:
+        payload["created_at_min"] = created_at_min
+    if created_at_max is not None:
+        payload["created_at_max"] = created_at_max
+
+    result = await client.query_task(**payload)
 
     if "error" in result:
         error = result.get("error", {})

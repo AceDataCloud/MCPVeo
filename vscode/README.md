@@ -42,26 +42,22 @@ For screenshots, token setup, project-level and user-level `mcp.json`, and Copil
 
 ## Tool Reference
 
-**12 tools** available via this server.
+**8 tools** available via this server.
 
 | Tool | Description |
 | --- | --- |
 | `veo_text_to_video` | Generate AI video from a text prompt using Veo. |
 | `veo_image_to_video` | Generate AI video from one or more reference images using Veo. |
 | `veo_get_1080p` | Get the 1080p high-resolution version of a generated video. |
-| `veo_upsample` | Upsample a generated video to 1080p, 4K, or GIF. |
-| `veo_extend_video` | Extend a Veo 3.1 video with additional content. |
-| `veo_reshoot` | Re-render an existing video with a different camera motion. |
-| `veo_video_objects` | Insert or remove objects in a generated video. |
 | `veo_get_task` | Query the status and result of a video generation task. |
-| `veo_get_tasks_batch` | Query multiple video generation tasks at once. |
+| `veo_get_tasks_batch` | Query multiple video generation tasks or list tasks. |
 | `veo_list_models` | List all available Veo models and their capabilities. |
 | `veo_list_actions` | List all available Veo API actions and corresponding tools. |
 | `veo_get_prompt_guide` | Get guidance on writing effective prompts for Veo video generation. |
 
 ## Supported Models
 
-`veo-3`, `veo-3-fast`, `veo-3.1`, `veo-3.1-fast`
+`veo3`, `veo3-fast`, `veo31`, `veo31-fast`, `veo31-fast-ingredients`
 
 ## Pricing
 
