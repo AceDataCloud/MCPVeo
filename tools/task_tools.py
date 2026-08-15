@@ -51,8 +51,14 @@ async def veo_get_task(
     # Throttle polling: sleep 5s for incomplete tasks so LLM clients
     # don't burn through poll attempts in seconds.
     response = result.get("response", {})
-    is_complete = response.get("success", False)
-    if not is_complete:
+    is_complete = response.get("success") is True
+    is_failed = response.get("success") is False or str(result.get("state", "")).lower() in {
+        "failed",
+        "error",
+        "cancelled",
+        "canceled",
+    }
+    if not is_complete and not is_failed:
         await asyncio.sleep(5)
     return format_task_result(result)
 
@@ -61,7 +67,9 @@ async def veo_get_task(
 async def veo_get_tasks_batch(
     task_ids: Annotated[
         list[str] | None,
-        Field(description="Optional list of task IDs to query. Maximum recommended batch size is 50 tasks."),
+        Field(
+            description="Optional list of task IDs to query. Maximum recommended batch size is 50 tasks."
+        ),
     ] = None,
     trace_ids: Annotated[
         list[str] | None,
