@@ -39,7 +39,7 @@ Generate AI videos from text prompts or images directly from Claude, VS Code, or
 ### 1. Get Your API Token
 
 1. Sign up at [AceDataCloud Platform](https://platform.acedata.cloud)
-2. Go to the [API documentation page](https://platform.acedata.cloud/documents/63e01dc3-eb21-499e-8049-3025c460058f)
+2. Go to the [API documentation page](https://platform.acedata.cloud/documents/veo-videos)
 3. Click **"Acquire"** to get your API token
 4. Copy the token for use below
 
@@ -498,10 +498,10 @@ VeoMCP/
 
 ## API Reference
 
-This server wraps the [AceDataCloud Veo API](https://platform.acedata.cloud/documents/63e01dc3-eb21-499e-8049-3025c460058f):
+This server wraps the [AceDataCloud Veo API](https://platform.acedata.cloud/documents/veo-videos):
 
-- [Veo Videos API](https://platform.acedata.cloud/documents/63e01dc3-eb21-499e-8049-3025c460058f) - Video generation
-- [Veo Tasks API](https://platform.acedata.cloud/documents/63e01dc3-eb21-499e-8049-3025c460058f) - Task queries
+- [Veo Videos API](https://platform.acedata.cloud/documents/veo-videos) - Video generation
+- [Veo Tasks API](https://platform.acedata.cloud/documents/veo-videos) - Task queries
 
 ## Contributing
 
@@ -512,6 +512,11 @@ Contributions are welcome! Please:
 3. Commit your changes (`git commit -m 'Add amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing`)
 5. Open a Pull Request
+
+## Documentation
+
+<!-- canonical-documentation -->
+[Documentation](https://platform.acedata.cloud/documents/veo-mcp)
 
 ## License
 

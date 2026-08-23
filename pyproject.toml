@@ -67,7 +67,7 @@ mcp-veo = "main:main"
 
 [project.urls]
 Homepage = "https://github.com/AceDataCloud/mcp-veo"
-Documentation = "https://platform.acedata.cloud/documents/63e01dc3-eb21-499e-8049-3025c460058f"
+Documentation = "https://platform.acedata.cloud/documents/veo-mcp"
 Repository = "https://github.com/AceDataCloud/mcp-veo"
 Issues = "https://github.com/AceDataCloud/mcp-veo/issues"
 Changelog = "https://github.com/AceDataCloud/mcp-veo/blob/main/CHANGELOG.md"

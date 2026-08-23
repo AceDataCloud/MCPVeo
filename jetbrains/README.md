@@ -56,7 +56,7 @@ Connects to the hosted MCP server at `veo.mcp.acedata.cloud`. No local install n
 ## Links
 
 - [Ace Data Cloud Platform](https://platform.acedata.cloud)
-- [API Documentation](https://docs.acedata.cloud)
+- [Documentation](https://platform.acedata.cloud/documents/veo-mcp)
 - [PyPI Package](https://pypi.org/project/mcp-veo/)
 - [Source Code](https://github.com/AceDataCloud/VeoMCP)
 
