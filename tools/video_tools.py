@@ -185,6 +185,10 @@ async def veo_get_1080p(
             description="The model used to generate the source video. Required by the API; pass the same model you used for the original generation."
         ),
     ] = DEFAULT_MODEL,
+    callback_url: Annotated[
+        str,
+        Field(description="Optional URL to receive a POST callback when upscaling completes."),
+    ] = "",
 ) -> str:
     """Get the 1080p high-resolution version of a generated video.
 
@@ -201,5 +205,5 @@ async def veo_get_1080p(
     Returns:
         Task ID and the 1080p video information including the new video URL.
     """
-    result = await client.get_1080p(video_id, model)
+    result = await client.get_1080p(video_id, model, callback_url or None)
     return format_video_result(result)
