@@ -18,6 +18,7 @@ load_dotenv()
 
 from core.config import settings
 from core.server import mcp
+from core.server_card import registered_tool_cards
 
 # Configure logging
 logging.basicConfig(
@@ -161,28 +162,7 @@ Environment Variables:
                     {
                         "serverInfo": {"name": "MCP Veo"},
                         "authentication": {"required": True, "schemes": ["bearer"]},
-                        "tools": [
-                            {
-                                "name": "veo_text_to_video",
-                                "description": "Generate video from text",
-                            },
-                            {
-                                "name": "veo_image_to_video",
-                                "description": "Generate video from image",
-                            },
-                            {"name": "veo_get_1080p", "description": "Get 1080p version"},
-                            {"name": "veo_get_task", "description": "Query task status"},
-                            {
-                                "name": "veo_get_tasks_batch",
-                                "description": "Query multiple tasks or list tasks",
-                            },
-                            {"name": "veo_list_models", "description": "List available models"},
-                            {"name": "veo_list_actions", "description": "List available actions"},
-                            {
-                                "name": "veo_get_prompt_guide",
-                                "description": "Get prompt writing guide",
-                            },
-                        ],
+                        "tools": registered_tool_cards(mcp),
                         "prompts": [
                             {
                                 "name": "veo_video_generation_guide",
